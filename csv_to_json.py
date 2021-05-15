@@ -19,6 +19,6 @@ def csv_to_json(csvFilePath, jsonFilePath):
         jsonString = json.dumps(jsonArray, indent=4)
         jsonf.write(jsonString)
           
-csvFilePath = r'cell tower tool\404.csv'
-jsonFilePath = f'cell tower tool\cell.json'
+csvFilePath = r'403.csv'
+jsonFilePath = f'cell.json'
 csv_to_json(csvFilePath, jsonFilePath)

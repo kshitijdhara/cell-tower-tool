@@ -20,6 +20,7 @@ def query_movies(lati, longi, dynamodb=None):
         response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
         data.extend(response['Items'])
     print(json.dumps(data))
+    return data
 
 
 if __name__ == '__main__':
@@ -32,5 +33,6 @@ if __name__ == '__main__':
     quer_lon = (query_lon - 0.5, query_lon + 0.5)
     
     movies = query_movies(quer_lat, quer_lon)
-    """for movie in movies:
-        print(movie['cell'], ":", movie['radio'])"""
+    print('   lat      ,    lon')
+    for movie in movies:
+        print(movie['lat'], ",", movie['lon'])
